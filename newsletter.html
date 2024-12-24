@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+  <title>Subscribe To News Letter</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('form').submit(function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Send the form data to FormSubmit using AJAX
+        $.ajax({
+          url: 'https://formspree.io/f/xrgnaegk',
+          method: 'POST',
+          data: $('form').serialize(),
+          dataType: 'json',
+          success: function(response) {
+            // Redirect to RECIEVED2.html upon successful submission
+            redirectToRECIEVED2();
+          },
+          error: function(xhr, status, error) {
+            console.log(xhr.responseText);
+            alert('An error occurred. Please try again.');
+          }
+        });
+      });
+    });
+
+    function redirectToRECIEVED2() {
+      window.location.href = 'RECIEVED2.html';
+    }
+  </script>
+</head>
+	
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <div class="hero_bg_box">
+      <div class="img-box">
+        <img src="https://i.pinimg.com/originals/62/39/4d/62394d753859943e6a1a36443ef78795.gif" alt="">
+      </div>
+    </div>
+
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid">
+          <div class="contact_link-container">
+            <a href="https://latitude.to/map/kr/south-korea" class="contact_link1">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                KOREA
+              </span>
+            </a>
+						<!-- Google Translate Element -->
+    <div id="google_translate_element"> </div>
+    
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+
+        // Check if a language preference is stored in localStorage
+        var selectedLanguage = localStorage.getItem('selectedLanguage');
+        if (selectedLanguage) {
+            // Set the selected language
+            var selectElement = document.querySelector('.goog-te-combo');
+            selectElement.value = selectedLanguage;
+            // Trigger change event to apply the selected language
+            var event = new Event('change');
+            selectElement.dispatchEvent(event);
+        }
+
+        // Store the selected language in localStorage when changed
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.goog-te-combo').addEventListener('change', function() {
+                var selectedLanguage = this.value;
+                localStorage.setItem('selectedLanguage', selectedLanguage);
+            });
+        });
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+	</script>
+	
+	
+            <a href="Tel:" class="contact_link2">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+               Call : +1(815) 074-3526
+              </span>
+            </a>
+            <a href="mailto:jacksonwangmusicband@gmail.com" class="contact_link3">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                Fanhelp@jackson.wang
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="index.html">
+              <span>
+                Jackson Wang 
+              </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""></span>
+            </button>
+
+            <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+		                      <li class="nav-item">
+                  <a class="nav-link" href="fans.html"> Fan's Services & Offer </a>
+                <li class="nav-item">
+                  <a class="nav-link" href="service.html"> Services </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html"> About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="bookapp.html"> Book an Appointment </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+
+ <!-- contact section -->
+  <section class="contact_section layout_padding">
+    <div class="contact_bg_box">
+      <img src="images/fyt7.gif" alt="">
+    </div>
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+		<b>
+          SUBSCRIBE TO NEWS LETTER 
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-9 mx-auto">
+          <div class="form_container">
+             <form>
+	   <div class="form-group">
+        <label for="email-newsletter-sub">Email Address</label>
+        <input type="email" id="email-newsletter-sub" name="email-newsletter-sub" required>
+      </div>
+	  </b>
+  <center>    <button type="submit" class="submit-btn"> SUBSCRIBE... </button></center>
+    </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+
+
+ <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_logo">
+            <a class="navbar-brand" href="index.html">
+              <span>
+                Jackson Wang
+
+              </span>
+            </a>
+			<h6 style="color:#0c8faa">
+            <p>
+              Stay positive, work hard, make it happen.
+			  <p> 
+			  The harder you work for something, the greater you'll feel when you achieve it.
+			  <p>
+			  Dream big, work hard, stay focused, and surround yourself with good people.
+			  </p>
+			  </h4>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_links">
+            <h5>
+              Useful Link
+            </h5>
+            <ul>
+              <li>
+                <a href="service.html">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="about.html">
+                  About 
+                </a>
+              </li>
+              <li>
+                <a href="index.html">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="fans.html">
+                  FAN'S OFFER
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_info">
+            <h5>
+              Contact Us
+            </h5>
+          </div>
+          <div class="info_contact">
+            <a href="https://latitude.to/map/kr/south-korea class="">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                KOREA
+              </span>
+            </a>
+            <a href="Tel:" class="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Call : +1(815) 074-3526
+              </span>
+            </a>
+            <a href="mailto:jacksonwangmusicband@gmail.com" class="">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                Fanhelp@jackson.wang
+              </span>
+            </a>	
+          <div class="info_form ">
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+	<center>
+	<a href="newsletter.html">
+    <button class="btn btn-primary custom-button">Subscribe to Newsletter</button>
+  </a>
+   </center>
+  </section>
+
+  <!-- end info_section -->
+
+
+
+
+  <!-- footer section -->
+  <footer class="container-fluid footer_section">
+    <p>
+      &copy; <span id="displayYear"></span> All Rights Reserved By
+      <a href="index.html"> Jackson Wang</a>
+    </p>
+  </footer>
+  <!-- footer section -->
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script src="js/custom.js"></script>
+
+</body>
+
+</html>
