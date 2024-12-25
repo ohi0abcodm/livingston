@@ -9,6 +9,17 @@ window.onload = function() {
     }, 300); // 0.3 seconds (300ms)
 };
 
+ // Spinner
+ var spinner = function () {
+    setTimeout(function () {
+        if ($('#spinner').length > 0) {
+            $('#spinner').removeClass('show');
+        }
+    }, 1);
+};
+spinner();
+
+
 // Function to copy the address to clipboard
 function copyAddress(crypto) {
     var addressSpan = document.getElementById(crypto + "-address");
