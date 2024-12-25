@@ -45,51 +45,52 @@
   <link href="css/responsive.css" rel="stylesheet" />
   
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $('form').submit(function(event) {
-        event.preventDefault(); // Prevent form submission
-  
-        // Send the form data to FormSubmit using AJAX
-        $.ajax({
-          url: 'https://formspree.io/f/xjkkvgqd',
-          method: 'POST',
-          data: $('form').serialize(),
-          dataType: 'json',
-          success: function(response) {
-            // Show the success message
-            showSuccessMessage();
-          },
-          error: function(xhr, status, error) {
-            console.log(xhr.responseText);
-            alert('An error occurred. Please try again.');
-          }
-        });
+<script>
+  $(document).ready(function() {
+    $('form').submit(function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Send the form data to FormSubmit using AJAX
+      $.ajax({
+        url: 'https://formspree.io/f/xjkkvgqd',
+        method: 'POST',
+        data: $('form').serialize(),
+        dataType: 'json',
+        success: function(response) {
+          // Show the success message within the form area
+          showSuccessMessage();
+        },
+        error: function(xhr, status, error) {
+          console.log(xhr.responseText);
+          alert('An error occurred. Please try again.');
+        }
       });
     });
+  });
 
-    // Function to show success message
-    function showSuccessMessage() {
-      // Create a div for the success message
-      var successMessage = $('<div></div>')
-        .text('You have successfully subscribed to the newsletter!')
-        .css({
-          'padding': '20px',
-          'background-color': '#4CAF50',
-          'color': 'white',
-          'text-align': 'center',
-          'font-size': '18px',
-          'border-radius': '5px',
-          'margin-top': '20px'
-        });
-  
-      // Append the success message to the body (or any other container)
-      $('body').append(successMessage);
-  
-      // Optionally, you can also hide the form after success
-      $('form').hide();
-    }
-  </script>
+  // Function to show success message
+  function showSuccessMessage() {
+    // Create a div for the success message
+    var successMessage = $('<div></div>')
+      .text('You have successfully subscribed to the newsletter!')
+      .css({
+        'padding': '20px',
+        'background-color': '#4CAF50',
+        'color': 'white',
+        'text-align': 'center',
+        'font-size': '18px',
+        'border-radius': '5px',
+        'margin-bottom': '20px' // Space between the message and form
+      });
+
+    // Append the success message inside the form container (above the form fields)
+    $('form').before(successMessage);  // Places the success message just above the form
+
+    // Optionally, you can also hide the form after success
+    $('form').hide(); // Hide the form after successful submission
+  }
+</script>
+
   
   
   <!--Start of Tawk.to Script-->
