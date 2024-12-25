@@ -1,3 +1,14 @@
+
+
+// Show the loading image for 0.3 seconds and then display the content
+window.onload = function() {
+    setTimeout(function() {
+        // Hide the loading image and show the content
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+    }, 300); // 0.3 seconds (300ms)
+};
+
 // Function to copy the address to clipboard
 function copyAddress(crypto) {
     var addressSpan = document.getElementById(crypto + "-address");
