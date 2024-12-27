@@ -582,7 +582,7 @@ a:focus {
 }
 
 .country_section .box {
-  display: ;
+  display: block;
   position: relative;
   margin-top: 45px;
   overflow: hidden;
@@ -616,12 +616,12 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .country_section .detail-box h3 {
   margin: 0;
-  color: #ffffff;
+  color: #1387CE;
   font-weight: 600;
   display: ;
 }
