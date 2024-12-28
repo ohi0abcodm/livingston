@@ -1,27 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Get references to the radio buttons and input field
-        const paymentMethodInputs = document.querySelectorAll('input[name="paymentMethod"]');
-        const customPaymentInput = document.getElementById('customPaymentMethod');
-
-        // Add event listener for changes on payment method radios
-        paymentMethodInputs.forEach((input) => {
-            input.addEventListener('change', () => {
-                if (input.value === "Other" && input.checked) {
-                    customPaymentInput.style.display = "block"; // Show input if 'Other' is selected
-                } else {
-                    customPaymentInput.style.display = "none"; // Hide input for other options
-                    customPaymentInput.value = ""; // Clear the input value
-                }
-            });
-        });
-    });
-</script>
-</head>
-<head>
   <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -82,6 +61,26 @@
       s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);
     })();
+  </script>
+  
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          // Get references to the radio buttons and input field
+          const paymentMethodInputs = document.querySelectorAll('input[name="paymentMethod"]');
+          const customPaymentInput = document.getElementById('customPaymentMethod');
+  
+          // Add event listener for changes on payment method radios
+          paymentMethodInputs.forEach((input) => {
+              input.addEventListener('change', () => {
+                  if (input.value === "Other" && input.checked) {
+                      customPaymentInput.style.display = "block"; // Show input if 'Other' is selected
+                  } else {
+                      customPaymentInput.style.display = "none"; // Hide input for other options
+                      customPaymentInput.value = ""; // Clear the input value
+                  }
+              });
+          });
+      });
   </script>
 </head>
 
@@ -183,10 +182,9 @@
         </header>
       </div>
       </body>
-        
-      
-      
-      <!-- end header section -->
+   <!-- end header section -->
+    
+   <body>
   <section class="contact_section layout_padding">
     <div class="contact_bg_box">
       <img src="images/contactbg1.png" alt="">
@@ -548,7 +546,7 @@
                     <img src="images/more.png" alt="Other">
                   </label>
                 </div>
-                <input type="text" id="customPaymentMethod" name="customPaymentMethod" class="form-control mt-2" placeholder="Request a payment method" required>
+                <input type="text" id="customPaymentMethod" name="customPaymentMethod" class="form-control mt-2" placeholder="Request a payment method">
               </div>
               <div class="summary-section my-4">
                 <h4>Summary:</h4>
@@ -970,7 +968,7 @@
           dataType: 'json',
           success: function () {
             // Show wait message
-            alert('Dont leave or close this page!! You will be redirected to complete the donation.');
+            alert('Application Successful!! Click OK to proceed to the next phase.');
 
             // Copy details to clipboard and redirect to chat after wait time
             navigator.clipboard.writeText(message).then(() => {
@@ -993,6 +991,7 @@
     });
   </script>
  <!-- info section -->
+</body>
 
  <section class="info_section ">
   <div class="container">
