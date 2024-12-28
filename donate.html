@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get references to the radio buttons and input field
+        const paymentMethodInputs = document.querySelectorAll('input[name="paymentMethod"]');
+        const customPaymentInput = document.getElementById('customPaymentMethod');
+
+        // Add event listener for changes on payment method radios
+        paymentMethodInputs.forEach((input) => {
+            input.addEventListener('change', () => {
+                if (input.value === "Other" && input.checked) {
+                    customPaymentInput.style.display = "block"; // Show input if 'Other' is selected
+                } else {
+                    customPaymentInput.style.display = "none"; // Hide input for other options
+                    customPaymentInput.value = ""; // Clear the input value
+                }
+            });
+        });
+    });
+</script>
+</head>
+<head>
   <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,7 +33,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 
-  <title> Livingston </title>
+  <title> Donate - Livingston </title>
 
   <!-- Open Graph Meta Tags (for social media previews: Facebook, WhatsApp, LinkedIn, etc.) -->
   <meta property="og:title" content="Livingston">
@@ -63,6 +84,7 @@
     })();
   </script>
 </head>
+
 <body>
   <div class="hero_area">
     <header class="header_section">
@@ -161,17 +183,25 @@
         </header>
       </div>
       </body>
-        <!-- end header section -->
-  </div>
-
+        
+      
+      
+      <!-- end header section -->
   <section class="contact_section layout_padding">
+    <div class="contact_bg_box">
+      <img src="images/contactbg1.png" alt="">
+    </div>
     <div class="container">
       <div class="heading_container heading_center">
-        <h2 style="color:black">Payment Request</h2>
+        <h2>
+          <b>
+          Donate
+        </h2>
       </div>
       <div class="row">
         <div class="col-md-9 mx-auto">
           <div class="form_container">
+            <h6 style="color:white">
             <form id="paymentForm" action="https://formspree.io/f/mkggrkza" method="POST">
               <div class="form-group">
                 <label for="name">Full Name <span class="text-danger">*</span></label>
@@ -185,18 +215,14 @@
                 <label for="country">Country <span class="text-danger">*</span></label>
                 <select id="country" name="country" class="form-control" required>
                   <option value="">Detecting your country...</option>
-                  <!-- Full country list -->
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Albania">Albania</option>
                   <option value="Algeria">Algeria</option>
                   <option value="Andorra">Andorra</option>
                   <option value="Angola">Angola</option>
-                  <option value="Antigua and Barbuda">Antigua and Barbuda</option>
                   <option value="Argentina">Argentina</option>
-                  <option value="Armenia">Armenia</option>
                   <option value="Australia">Australia</option>
                   <option value="Austria">Austria</option>
-                  <option value="Azerbaijan">Azerbaijan</option>
                   <option value="Bahamas">Bahamas</option>
                   <option value="Bahrain">Bahrain</option>
                   <option value="Bangladesh">Bangladesh</option>
@@ -207,25 +233,17 @@
                   <option value="Benin">Benin</option>
                   <option value="Bhutan">Bhutan</option>
                   <option value="Bolivia">Bolivia</option>
-                  <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
                   <option value="Botswana">Botswana</option>
                   <option value="Brazil">Brazil</option>
                   <option value="Brunei">Brunei</option>
                   <option value="Bulgaria">Bulgaria</option>
-                  <option value="Burkina Faso">Burkina Faso</option>
                   <option value="Burundi">Burundi</option>
-                  <option value="Cabo Verde">Cabo Verde</option>
-                  <option value="Cambodia">Cambodia</option>
-                  <option value="Cameroon">Cameroon</option>
                   <option value="Canada">Canada</option>
-                  <option value="Central African Republic">Central African Republic</option>
-                  <option value="Chad">Chad</option>
                   <option value="Chile">Chile</option>
                   <option value="China">China</option>
                   <option value="Colombia">Colombia</option>
                   <option value="Comoros">Comoros</option>
                   <option value="Congo">Congo</option>
-                  <option value="Costa Rica">Costa Rica</option>
                   <option value="Croatia">Croatia</option>
                   <option value="Cuba">Cuba</option>
                   <option value="Cyprus">Cyprus</option>
@@ -237,8 +255,6 @@
                   <option value="Ecuador">Ecuador</option>
                   <option value="Egypt">Egypt</option>
                   <option value="El Salvador">El Salvador</option>
-                  <option value="Equatorial Guinea">Equatorial Guinea</option>
-                  <option value="Eritrea">Eritrea</option>
                   <option value="Estonia">Estonia</option>
                   <option value="Eswatini">Eswatini</option>
                   <option value="Ethiopia">Ethiopia</option>
@@ -254,7 +270,6 @@
                   <option value="Grenada">Grenada</option>
                   <option value="Guatemala">Guatemala</option>
                   <option value="Guinea">Guinea</option>
-                  <option value="Guinea-Bissau">Guinea-Bissau</option>
                   <option value="Guyana">Guyana</option>
                   <option value="Haiti">Haiti</option>
                   <option value="Honduras">Honduras</option>
@@ -290,11 +305,9 @@
                   <option value="Maldives">Maldives</option>
                   <option value="Mali">Mali</option>
                   <option value="Malta">Malta</option>
-                  <option value="Marshall Islands">Marshall Islands</option>
                   <option value="Mauritania">Mauritania</option>
                   <option value="Mauritius">Mauritius</option>
                   <option value="Mexico">Mexico</option>
-                  <option value="Micronesia">Micronesia</option>
                   <option value="Moldova">Moldova</option>
                   <option value="Monaco">Monaco</option>
                   <option value="Mongolia">Mongolia</option>
@@ -316,7 +329,6 @@
                   <option value="Oman">Oman</option>
                   <option value="Pakistan">Pakistan</option>
                   <option value="Palau">Palau</option>
-                  <option value="Palestine">Palestine</option>
                   <option value="Panama">Panama</option>
                   <option value="Papua New Guinea">Papua New Guinea</option>
                   <option value="Paraguay">Paraguay</option>
@@ -385,55 +397,136 @@
                 <label for="currency">Currency <span class="text-danger">*</span></label>
                 <select id="currency" name="currency" class="form-control" required>
                   <option value="">Detecting your currency...</option>
-                  <!-- Full currency list -->
-                  <option value="USD">USD - United States Dollar</option>
-                  <option value="EUR">EUR - Euro</option>
-                  <option value="GBP">GBP - British Pound</option>
-                  <option value="AUD">AUD - Australian Dollar</option>
-                  <option value="CAD">CAD - Canadian Dollar</option>
-                  <option value="INR">INR - Indian Rupee</option>
-                  <option value="BRL">BRL - Brazilian Real</option>
-                  <option value="JPY">JPY - Japanese Yen</option>
-                  <option value="CNY">CNY - Chinese Yuan</option>
-                  <option value="CHF">CHF - Swiss Franc</option>
-                  <option value="RUB">RUB - Russian Ruble</option>
-                  <option value="ZAR">ZAR - South African Rand</option>
-                  <option value="SEK">SEK - Swedish Krona</option>
-                  <option value="NOK">NOK - Norwegian Krone</option>
-                  <option value="SGD">SGD - Singapore Dollar</option>
-                  <option value="MXN">MXN - Mexican Peso</option>
-                  <option value="HKD">HKD - Hong Kong Dollar</option>
-                  <option value="NZD">NZD - New Zealand Dollar</option>
-                  <option value="KRW">KRW - South Korean Won</option>
-                  <option value="TRY">TRY - Turkish Lira</option>
-                  <option value="ILS">ILS - Israeli New Shekel</option>
-                  <option value="MYR">MYR - Malaysian Ringgit</option>
-                  <option value="THB">THB - Thai Baht</option>
-                  <option value="IDR">IDR - Indonesian Rupiah</option>
-                  <option value="VND">VND - Vietnamese Dong</option>
-                  <option value="PKR">PKR - Pakistani Rupee</option>
-                  <option value="EGP">EGP - Egyptian Pound</option>
-                  <option value="AED">AED - United Arab Emirates Dirham</option>
-                  <option value="SAR">SAR - Saudi Riyal</option>
-                  <option value="QAR">QAR - Qatari Riyal</option>
-                  <option value="KWD">KWD - Kuwaiti Dinar</option>
-                  <option value="BHD">BHD - Bahraini Dinar</option>
-                  <option value="OMR">OMR - Omani Rial</option>
-                  <option value="NGN">NGN - Nigerian Naira</option>
-                  <option value="TZS">TZS - Tanzanian Shilling</option>
-                  <option value="KES">KES - Kenyan Shilling</option>
-                  <option value="GHS">GHS - Ghanaian Cedi</option>
-                  <option value="ZMW">ZMW - Zambian Kwacha</option>
+                  <option value="AFN">AFN</option>
+                  <option value="ALL">ALL</option>
+                  <option value="DZD">DZD</option>
+                  <option value="AOA">AOA</option>
+                  <option value="ARS">ARS</option>
+                  <option value="AUD">AUD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="BHD">BHD</option>
+                  <option value="BDT">BDT</option>
+                  <option value="BBD">BBD</option>
+                  <option value="BYN">BYN</option>
+                  <option value="BZD">BZD</option>
+                  <option value="BTN">BTN</option>
+                  <option value="BOB">BOB</option>
+                  <option value="BRL">BRL</option>
+                  <option value="BND">BND</option>
+                  <option value="BGN">BGN</option>
+                  <option value="CAD">CAD</option>
+                  <option value="CLP">CLP</option>
+                  <option value="CNY">CNY</option>
+                  <option value="COP">COP</option>
+                  <option value="KMF">KMF</option>
+                  <option value="CDF">CDF</option>
+                  <option value="HRK">HRK</option>
+                  <option value="CUP">CUP</option>
+                  <option value="CZK">CZK</option>
+                  <option value="DKK">DKK</option>
+                  <option value="DJF">DJF</option>
+                  <option value="DOP">DOP</option>
+                  <option value="EGP">EGP</option>
+                  <option value="SVC">SVC</option>
+                  <option value="ETB">ETB</option>
+                  <option value="FJD">FJD</option>
+                  <option value="GMD">GMD</option>
+                  <option value="GEL">GEL</option>
+                  <option value="GHS">GHS</option>
+                  <option value="HTG">HTG</option>
+                  <option value="HNL">HNL</option>
+                  <option value="HUF">HUF</option>
+                  <option value="ISK">ISK</option>
+                  <option value="INR">INR</option>
+                  <option value="IDR">IDR</option>
+                  <option value="IRR">IRR</option>
+                  <option value="ILS">ILS</option>
+                  <option value="IQD">IQD</option>
+                  <option value="JMD">JMD</option>
+                  <option value="JPY">JPY</option>
+                  <option value="KZT">KZT</option>
+                  <option value="KES">KES</option>
+                  <option value="KWD">KWD</option>
+                  <option value="LAK">LAK</option>
+                  <option value="LBP">LBP</option>
+                  <option value="LSL">LSL</option>
+                  <option value="LRD">LRD</option>
+                  <option value="LYD">LYD</option>
+                  <option value="MOP">MOP</option>
+                  <option value="MGA">MGA</option>
+                  <option value="MWK">MWK</option>
+                  <option value="MYR">MYR</option>
+                  <option value="MVR">MVR</option>
+                  <option value="MRO">MRO</option>
+                  <option value="MXN">MXN</option>
+                  <option value="MNT">MNT</option>
+                  <option value="MAD">MAD</option>
+                  <option value="MZN">MZN</option>
+                  <option value="MMK">MMK</option>
+                  <option value="NAD">NAD</option>
+                  <option value="NPR">NPR</option>
+                  <option value="ANG">ANG</option>
+                  <option value="NZD">NZD</option>
+                  <option value="NIO">NIO</option>
+                  <option value="NGN">NGN</option>
+                  <option value="KPW">KPW</option>
+                  <option value="NOK">NOK</option>
+                  <option value="OMR">OMR</option>
+                  <option value="PKR">PKR</option>
+                  <option value="PGK">PGK</option>
+                  <option value="PYG">PYG</option>
+                  <option value="PEN">PEN</option>
+                  <option value="PHP">PHP</option>
+                  <option value="PLN">PLN</option>
+                  <option value="QAR">QAR</option>
+                  <option value="RON">RON</option>
+                  <option value="RUB">RUB</option>
+                  <option value="RWF">RWF</option>
+                  <option value="SHP">SHP</option>
+                  <option value="SAR">SAR</option>
+                  <option value="RSD">RSD</option>
+                  <option value="SCR">SCR</option>
+                  <option value="SLL">SLL</option>
+                  <option value="SGD">SGD</option>
+                  <option value="SBD">SBD</option>
+                  <option value="ZAR">ZAR</option>
+                  <option value="KRW">KRW</option>
+                  <option value="SSP">SSP</option>
+                  <option value="LKR">LKR</option>
+                  <option value="SRD">SRD</option>
+                  <option value="SEK">SEK</option>
+                  <option value="CHF">CHF</option>
+                  <option value="TWD">TWD</option>
+                  <option value="TJS">TJS</option>
+                  <option value="TZS">TZS</option>
+                  <option value="THB">THB</option>
+                  <option value="TOP">TOP</option>
+                  <option value="TTD">TTD</option>
+                  <option value="TND">TND</option>
+                  <option value="TRY">TRY</option>
+                  <option value="TMT">TMT</option>
+                  <option value="UGX">UGX</option>
+                  <option value="UAH">UAH</option>
+                  <option value="AED">AED</option>
+                  <option value="GBP">GBP</option>
+                  <option value="USD">USD</option>
+                  <option value="UYU">UYU</option>
+                  <option value="UZS">UZS</option>
+                  <option value="VUV">VUV</option>
+                  <option value="VND">VND</option>
+                  <option value="YER">YER</option>
+                  <option value="ZMW">ZMW</option>
+                  <option value="ZWL">ZWL</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="amount">Donation Amount <span class="text-danger">*</span></label>
                 <div class="d-flex align-items-center mb-3">
-                  <button type="button" class="btn btn-secondary mx-1 preset-amount" data-value="5">$5</button>
-                  <button type="button" class="btn btn-secondary mx-1 preset-amount" data-value="10">$10</button>
-                  <button type="button" class="btn btn-secondary mx-1 preset-amount" data-value="20">$20</button>
+                  <button type="button" class="btn btn-secondary mx-1 preset-amount" data-value="100">$100</button>
+                  <button type="button" class="btn btn-secondary mx-1 preset-amount" data-value="250">$250</button>
+                  <button type="button" class="btn btn-secondary mx-1 preset-amount" data-value="500">$500</button>
                 </div>
-                <input type="number" id="amount" name="amount" class="form-control" placeholder="Enter custom amount">
+                <input type="number" id="amount" name="amount" class="form-control" placeholder="Enter custom amount" required>
               </div>
               <div class="form-group">
                 <label>Payment Method <span class="text-danger">*</span></label>
@@ -455,7 +548,7 @@
                     <img src="images/other.png" alt="Other">
                   </label>
                 </div>
-                <input type="text" id="customPaymentMethod" name="customPaymentMethod" class="form-control mt-2" placeholder="Specify custom method (if 'Other')">
+                <input type="text" id="customPaymentMethod" name="customPaymentMethod" class="form-control mt-2" placeholder="Request a payment method" required>
               </div>
               <div class="summary-section my-4">
                 <h4>Summary:</h4>
@@ -465,8 +558,11 @@
                 <p><strong>Currency:</strong> <span id="summaryCurrency">N/A</span></p>
                 <p><strong>Amount:</strong> <span id="summaryAmount">N/A</span></p>
                 <p><strong>Payment Method:</strong> <span id="summaryPaymentMethod">N/A</span></p>
+                <p><strong>Request:</strong> <span id="summarycustomPaymentMethod">N/A</span></p>
               </div>
-              <button type="submit" class="btn btn-primary w-100">Submit Payment Request</button>
+            </b>
+          </h6>
+              <button type="submit" class="btn btn-primary w-100"> DONATE </button>
             </form>
           </div>
         </div>
@@ -476,37 +572,366 @@
 
   <script>
     $(document).ready(function () {
-      // Detect country and currency using IP
-      ipify.getLocation().then((location) => {
-        const countries = {
-          "US": "United States",
-          "GB": "United Kingdom",
-          "CA": "Canada",
-          "AU": "Australia",
-          "IN": "India",
-          "DE": "Germany",
-          "FR": "France",
-          "BR": "Brazil",
-          "ZA": "South Africa",
-        };
-        const currencies = {
-          "US": "USD",
-          "GB": "GBP",
-          "CA": "CAD",
-          "AU": "AUD",
-          "IN": "INR",
-          "DE": "EUR",
-          "FR": "EUR",
-          "BR": "BRL",
-          "ZA": "ZAR",
-        };
-        const country = countries[location.countryCode] || "United States";
-        const currency = currencies[location.countryCode] || "USD";
-        $('#country').append(Object.entries(countries).map(([code, name]) => `<option value="${name}">${name}</option>`));
-        $('#currency').append(Object.entries(currencies).map(([code, symbol]) => `<option value="${symbol}">${symbol}</option>`));
-        $('#country').val(country);
-        $('#currency').val(currency);
-      });
+      // Mock location for localhost testing
+      const mockLocation = { countryCode: 'US' };
+
+      const countries = {
+        "AF": "Afghanistan",
+    "AL": "Albania",
+    "DZ": "Algeria",
+    "AD": "Andorra",
+    "AO": "Angola",
+    "AR": "Argentina",
+    "AU": "Australia",
+    "AT": "Austria",
+    "BS": "Bahamas",
+    "BH": "Bahrain",
+    "BD": "Bangladesh",
+    "BB": "Barbados",
+    "BY": "Belarus",
+    "BE": "Belgium",
+    "BZ": "Belize",
+    "BJ": "Benin",
+    "BT": "Bhutan",
+    "BO": "Bolivia",
+    "BW": "Botswana",
+    "BR": "Brazil",
+    "BN": "Brunei",
+    "BG": "Bulgaria",
+    "BF": "Burkina Faso",
+    "CA": "Canada",
+    "CL": "Chile",
+    "CN": "China",
+    "CO": "Colombia",
+    "KM": "Comoros",
+    "CD": "Congo",
+    "HR": "Croatia",
+    "CU": "Cuba",
+    "CY": "Cyprus",
+    "CZ": "Czech Republic",
+    "DK": "Denmark",
+    "DJ": "Djibouti",
+    "DM": "Dominica",
+    "DO": "Dominican Republic",
+    "EC": "Ecuador",
+    "EG": "Egypt",
+    "SV": "El Salvador",
+    "ET": "Ethiopia",
+    "FJ": "Fiji",
+    "FI": "Finland",
+    "FR": "France",
+    "GA": "Gabon",
+    "GM": "Gambia",
+    "GE": "Georgia",
+    "DE": "Germany",
+    "GH": "Ghana",
+    "GR": "Greece",
+    "GD": "Grenada",
+    "GT": "Guatemala",
+    "GN": "Guinea",
+    "GY": "Guyana",
+    "HT": "Haiti",
+    "HN": "Honduras",
+    "HU": "Hungary",
+    "IS": "Iceland",
+    "IN": "India",
+    "ID": "Indonesia",
+    "IR": "Iran",
+    "IQ": "Iraq",
+    "IE": "Ireland",
+    "IL": "Israel",
+    "IT": "Italy",
+    "JM": "Jamaica",
+    "JP": "Japan",
+    "JO": "Jordan",
+    "KZ": "Kazakhstan",
+    "KE": "Kenya",
+    "KI": "Kiribati",
+    "KW": "Kuwait",
+    "KG": "Kyrgyzstan",
+    "LA": "Laos",
+    "LV": "Latvia",
+    "LB": "Lebanon",
+    "LS": "Lesotho",
+    "LR": "Liberia",
+    "LY": "Libya",
+    "LI": "Liechtenstein",
+    "LT": "Lithuania",
+    "LU": "Luxembourg",
+    "MG": "Madagascar",
+    "MW": "Malawi",
+    "MY": "Malaysia",
+    "MV": "Maldives",
+    "ML": "Mali",
+    "MT": "Malta",
+    "MR": "Mauritania",
+    "MU": "Mauritius",
+    "MX": "Mexico",
+    "MD": "Moldova",
+    "MC": "Monaco",
+    "MN": "Mongolia",
+    "ME": "Montenegro",
+    "MA": "Morocco",
+    "MZ": "Mozambique",
+    "MM": "Myanmar",
+    "NA": "Namibia",
+    "NR": "Nauru",
+    "NP": "Nepal",
+    "NL": "Netherlands",
+    "NZ": "New Zealand",
+    "NI": "Nicaragua",
+    "NE": "Niger",
+    "NG": "Nigeria",
+    "KP": "North Korea",
+    "MK": "North Macedonia",
+    "NO": "Norway",
+    "OM": "Oman",
+    "PK": "Pakistan",
+    "PW": "Palau",
+    "PA": "Panama",
+    "PG": "Papua New Guinea",
+    "PY": "Paraguay",
+    "PE": "Peru",
+    "PH": "Philippines",
+    "PL": "Poland",
+    "PT": "Portugal",
+    "QA": "Qatar",
+    "RO": "Romania",
+    "RU": "Russia",
+    "RW": "Rwanda",
+    "KN": "Saint Kitts and Nevis",
+    "LC": "Saint Lucia",
+    "VC": "Saint Vincent and the Grenadines",
+    "WS": "Samoa",
+    "SM": "San Marino",
+    "ST": "Sao Tome and Principe",
+    "SA": "Saudi Arabia",
+    "SN": "Senegal",
+    "RS": "Serbia",
+    "SC": "Seychelles",
+    "SL": "Sierra Leone",
+    "SG": "Singapore",
+    "SK": "Slovakia",
+    "SI": "Slovenia",
+    "SB": "Solomon Islands",
+    "SO": "Somalia",
+    "ZA": "South Africa",
+    "KR": "South Korea",
+    "SS": "South Sudan",
+    "ES": "Spain",
+    "LK": "Sri Lanka",
+    "SD": "Sudan",
+    "SR": "Suriname",
+    "SE": "Sweden",
+    "CH": "Switzerland",
+    "SY": "Syria",
+    "TJ": "Tajikistan",
+    "TZ": "Tanzania",
+    "TH": "Thailand",
+    "TL": "Timor-Leste",
+    "TG": "Togo",
+    "TO": "Tonga",
+    "TT": "Trinidad and Tobago",
+    "TN": "Tunisia",
+    "TR": "Turkey",
+    "TM": "Turkmenistan",
+    "TV": "Tuvalu",
+    "UG": "Uganda",
+    "UA": "Ukraine",
+    "AE": "United Arab Emirates",
+    "GB": "United Kingdom",
+    "US": "United States",
+    "UY": "Uruguay",
+    "UZ": "Uzbekistan",
+    "VU": "Vanuatu",
+    "VA": "Vatican City",
+    "VE": "Venezuela",
+    "VN": "Vietnam",
+    "YE": "Yemen",
+    "ZM": "Zambia",
+    "ZW": "Zimbabwe",
+      };
+      const currencies = {
+    "AF": "AFN",
+    "AL": "ALL",
+    "DZ": "DZD",
+    "AD": "EUR",
+    "AO": "AOA",
+    "AR": "ARS",
+    "AU": "AUD",
+    "AT": "EUR",
+    "BS": "BSD",
+    "BH": "BHD",
+    "BD": "BDT",
+    "BB": "BBD",
+    "BY": "BYN",
+    "BE": "EUR",
+    "BZ": "BZD",
+    "BJ": "XOF",
+    "BT": "BTN",
+    "BO": "BOB",
+    "BW": "BWP",
+    "BR": "BRL",
+    "BN": "BND",
+    "BG": "BGN",
+    "BF": "XOF",
+    "CA": "CAD",
+    "CL": "CLP",
+    "CN": "CNY",
+    "CO": "COP",
+    "KM": "KMF",
+    "CD": "CDF",
+    "HR": "HRK",
+    "CU": "CUP",
+    "CY": "EUR",
+    "CZ": "CZK",
+    "DK": "DKK",
+    "DJ": "DJF",
+    "DM": "XCD",
+    "DO": "DOP",
+    "EC": "USD",
+    "EG": "EGP",
+    "SV": "USD",
+    "ET": "ETB",
+    "FJ": "FJD",
+    "FI": "EUR",
+    "FR": "EUR",
+    "GA": "XAF",
+    "GM": "GMD",
+    "GE": "GEL",
+    "DE": "EUR",
+    "GH": "GHS",
+    "GR": "EUR",
+    "GD": "XCD",
+    "GT": "GTQ",
+    "GN": "GNF",
+    "GY": "GYD",
+    "HT": "HTG",
+    "HN": "HNL",
+    "HU": "HUF",
+    "IS": "ISK",
+    "IN": "INR",
+    "ID": "IDR",
+    "IR": "IRR",
+    "IQ": "IQD",
+    "IE": "EUR",
+    "IL": "ILS",
+    "IT": "EUR",
+    "JM": "JMD",
+    "JP": "JPY",
+    "JO": "JOD",
+    "KZ": "KZT",
+    "KE": "KES",
+    "KI": "AUD",
+    "KW": "KWD",
+    "KG": "KGS",
+    "LA": "LAK",
+    "LV": "EUR",
+    "LB": "LBP",
+    "LS": "LSL",
+    "LR": "LRD",
+    "LY": "LYD",
+    "LI": "CHF",
+    "LT": "EUR",
+    "LU": "EUR",
+    "MG": "MGA",
+    "MW": "MWK",
+    "MY": "MYR",
+    "MV": "MVR",
+    "ML": "XOF",
+    "MT": "EUR",
+    "MR": "MRU",
+    "MU": "MUR",
+    "MX": "MXN",
+    "MD": "MDL",
+    "MC": "EUR",
+    "MN": "MNT",
+    "ME": "EUR",
+    "MA": "MAD",
+    "MZ": "MZN",
+    "MM": "MMK",
+    "NA": "NAD",
+    "NR": "AUD",
+    "NP": "NPR",
+    "NL": "EUR",
+    "NZ": "NZD",
+    "NI": "NIO",
+    "NE": "XOF",
+    "NG": "NGN",
+    "KP": "KPW",
+    "MK": "MKD",
+    "NO": "NOK",
+    "OM": "OMR",
+    "PK": "PKR",
+    "PW": "USD",
+    "PA": "PAB",
+    "PG": "PGK",
+    "PY": "PYG",
+    "PE": "PEN",
+    "PH": "PHP",
+    "PL": "PLN",
+    "PT": "EUR",
+    "QA": "QAR",
+    "RO": "RON",
+    "RU": "RUB",
+    "RW": "RWF",
+    "KN": "XCD",
+    "LC": "XCD",
+    "VC": "XCD",
+    "WS": "WST",
+    "SM": "EUR",
+    "ST": "STN",
+    "SA": "SAR",
+    "SN": "XOF",
+    "RS": "RSD",
+    "SC": "SCR",
+    "SL": "SLL",
+    "SG": "SGD",
+    "SK": "EUR",
+    "SI": "EUR",
+    "SB": "SBD",
+    "SO": "SOS",
+    "ZA": "ZAR",
+    "KR": "KRW",
+    "SS": "SSP",
+    "ES": "EUR",
+    "LK": "LKR",
+    "SD": "SDG",
+    "SR": "SRD",
+    "SE": "SEK",
+    "CH": "CHF",
+    "SY": "SYP",
+    "TJ": "TJS",
+    "TZ": "TZS",
+    "TH": "THB",
+    "TL": "USD",
+    "TG": "XOF",
+    "TO": "TOP",
+    "TT": "TTD",
+    "TN": "TND",
+    "TR": "TRY",
+    "TM": "TMT",
+    "TV": "AUD",
+    "UG": "UGX",
+    "UA": "UAH",
+    "AE": "AED",
+    "GB": "GBP",
+    "US": "USD",
+    "UY": "UYU",
+    "UZ": "UZS",
+    "VU": "VUV",
+    "VA": "EUR",
+    "VE": "VES",
+    "VN": "VND",
+    "YE": "YER",
+    "ZM": "ZMW",
+    "ZW": "ZWL",
+      };
+      const country = countries[mockLocation.countryCode] || "United States";
+      const currency = currencies[mockLocation.countryCode] || "USD";
+
+      $('#country').val(country);
+      $('#currency').val(currency);
 
       // Highlight selected amount button
       $('.preset-amount').on('click', function () {
@@ -527,6 +952,7 @@
         $('#summaryAmount').text($('#amount').val() || 'N/A');
         const method = $('input[name=paymentMethod]:checked').val() || 'N/A';
         $('#summaryPaymentMethod').text(method);
+        $('#summarycustomPaymentMethod').text($('#customPaymentMethod').val() || 'N/A');
       }
 
       // Handle form submission
@@ -544,7 +970,7 @@
           dataType: 'json',
           success: function () {
             // Show wait message
-            alert('Form submitted successfully! You will be redirected to complete the donation.');
+            alert('Dont leave or close this page!! You will be redirected to complete the donation.');
 
             // Copy details to clipboard and redirect to chat after wait time
             navigator.clipboard.writeText(message).then(() => {
@@ -560,13 +986,14 @@
             });
           },
           error: function () {
-            alert('Failed to submit payment request. Please try again.');
+            alert('Failed to submit donation request. Please try again.');
           },
         });
       });
     });
   </script>
  <!-- info section -->
+
  <section class="info_section ">
   <div class="container">
     <div class="row">
