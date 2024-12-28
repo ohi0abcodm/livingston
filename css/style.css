@@ -723,7 +723,7 @@ a:focus {
 
 .client_section .owl-carousel .owl-nav .owl-prev:hover,
 .client_section .owl-carousel .owl-nav .owl-next:hover {
-  background-color: #071a52;
+  background-color: #e0decd;
 }
 
 /* contact section */
@@ -818,7 +818,7 @@ a:focus {
   border: none;
   text-transform: uppercase;
   display: inline-block;
-  padding: 10px 55px;
+  padding: auto;
   background-color: #699e8c;
   color: #ffffff;
   -webkit-transition: all 0.3s;
